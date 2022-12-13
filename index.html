@@ -44,6 +44,13 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
+            <div class="input-field">
+                <input type="text" class="input-icon">
+                <img src="./images/search-icon.webp" alt="" width="20px" height="20px">
+            </div>
+            <div class="search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
         </nav>
     </header>
 
@@ -192,23 +199,41 @@
                 </div>
             </div>
             <div class="image_section">
-                <img src="./images/large-4.png" alt="">
+                <img src="./images/large-4.png" alt="" width="auto">
             </div>
         </div>
     </div>
     <!-- Carousel section -->
-    <div class="owl-carousel" id="owl-demo">
-        <div class="carousel-img item"> 
-            <img src="./images/carousal-0.png" alt="#"> 
+    <div class="owl-carousel" id="brand">
+        <div class="carousel-img item">
+            <img src="./images/carousal-0.png" alt="#">
         </div>
-        <div class="carousel-img item">    
-            <img src="./images/carousal-1.png" alt="#"> 
+        <div class="carousel-img item">
+            <img src="./images/carousal-1.png" alt="#">
         </div>
-        <div class="carousel-img item">  
-            <img src="./images/carousal-2.png" alt="#"> 
+        <div class="carousel-img item">
+            <img src="./images/carousal-2.png" alt="#">
         </div>
-        <div class="carousel-img item"> 
-            <img src="./images/carousal-3.png" alt="#"> 
+        <div class="carousel-img item">
+            <img src="./images/carousal-3.png" alt="#">
+        </div>
+        <div class="carousel-img item">
+            <img src="./images/carousal-4.png" alt="#">
+        </div>
+        <div class="carousel-img item">
+            <img src="./images/carousal-5.png" alt="#">
+        </div>
+        <div class="carousel-img item">
+            <img src="./images/carousal-6.png" alt="#">
+        </div>
+        <div class="carousel-img item">
+            <img src="./images/carousal-7.png" alt="#">
+        </div>
+        <div class="carousel-img item">
+            <img src="./images/carousal-8.png" alt="#">
+        </div>
+        <div class="carousel-img item">
+            <img src="./images/carousal-9.png" alt="#">
         </div>
     </div>
     <!-- Footer section -->
@@ -275,39 +300,7 @@
     <!-- <script language="JavaScript" src="jquery.min.js" type="text/javascript"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector(".nav-menu");
-
-        hamburger.addEventListener("click", mobileMenu);
-
-        function mobileMenu() {
-            hamburger.classList.toggle("active");
-            navMenu.classList.toggle("active");
-        }
-
-        const navLink = document.querySelectorAll(".nav-link");
-
-        navLink.forEach(n => n.addEventListener("click", closeMenu));
-
-        function closeMenu() {
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
-        }
-        $(document).ready(function () {
-    $("#owl-demo").owlCarousel({
-
-        autoPlay: 3000, //Set AutoPlay to 3 seconds
-        dots: true,
-        nav:true,
-        items: 2,
-        itemsDesktop: [1199, 3],
-        itemsDesktopSmall: [979, 3]
-    });
-});
-
-
-    </script>
+    <script src="./main.js"></script>
 
 </body>
 

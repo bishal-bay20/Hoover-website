@@ -1,8 +1,64 @@
+// Fontface
+@font-face {
+    font-family: 'Helvetica-normal-talic';
+    src: url('../assets/fonts/Helvetica-Oblique.woff2') format('woff2'),
+        url('../assets/fonts/Helvetica-Oblique.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica-normal';
+    src: url('../assets/fonts/Helvetica.woff2') format('woff2'),
+        url('../assets/fonts/Helvetica.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica-bold-normal';
+    src: url('../assets/fonts/HelveticaRounded-Bold.woff2') format('woff2'),
+        url('../assets/fonts/HelveticaRounded-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica-normal-compressed';
+    src: url('../assets/fonts/Helvetica-Compressed.woff2') format('woff2'),
+        url('../assets/fonts/Helvetica-Compressed.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica-300-normal';
+    src: url('../assets/fonts/Helvetica-Light.woff2') format('woff2'),
+        url('../assets/fonts/Helvetica-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica-bold-norman';
+    src: url('../assets/fonts/Helvetica-Bold.woff2') format('woff2'),
+        url('../assets/fonts/Helvetica-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica-bold-italic';
+    src: url('../assets/fonts/Helvetica-BoldOblique.woff2') format('woff2'),
+        url('../assets/fonts/Helvetica-BoldOblique.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Hurme Geometric Sans 3';
 }
 @mixin bp($point) {
     @if $point ==min768 {
@@ -112,6 +168,12 @@
 $secondary: #fff;
 $dark: #000;
 $dark_blue: #13216A;
+body{
+    font-family: 'Helvetica-normal';
+    font-weight: 400;
+    line-height: 1.2;
+    font-size: 16px;
+}
 .container {
     max-width: 1300px;
     margin: 0 auto;
@@ -119,6 +181,7 @@ $dark_blue: #13216A;
 }
 a {
     text-decoration: none;
+    font-size: 12px;
 }
 li {
     list-style: none;
@@ -135,6 +198,7 @@ li {
 }
 header{
     border: 1px solid $dark;
+    position: relative;
     .nav-bar{
         padding: 10px;
         .hover-logo{
@@ -145,6 +209,9 @@ header{
             @include bp(max1023){
                 display: block;
                 cursor: pointer;
+                position: absolute;
+                top: 10px;
+                right: 10px;
             }
             .bar {
                 display: block;
@@ -157,7 +224,8 @@ header{
             }
         }
         .nav-menu{
-            width:80%;
+            width:64%;
+            font-size: 15px;
             @include bp(max1023){
                 width: 100%;
             }
@@ -165,11 +233,53 @@ header{
                 .nav-link{
                     text-transform: uppercase;
                     color: #000;
+                    font-size: 12px;
+                    padding-bottom: 5px;
+                    transition: 0.8s ease-out;
                     &:hover{
-                        color: red;
+                        border-bottom: 1px solid $dark;
+                        
                     }
                 }
             }
+        }
+        .search{
+            width: 10%;
+            font-size: 12px;
+            text-align: center;
+        }
+        .fa-magnifying-glass:before, 
+        .fa-search:before {
+            content: "\f002";
+            margin-right: 33px;
+        }
+        .input-field{
+            position: fixed;
+            left: -1400px;
+            top: 55px;
+            background-color: $secondary;
+            width: 100%;
+            height: 100vh;
+            border-radius: 10px;
+            transition: 0.1s;
+            box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .input-icon{
+                font-size: 20px;
+                position: relative;
+                padding: 10px 50px;
+                border-radius: 5px;
+            }
+            img{
+                position: absolute;
+                left: 39%;
+            }
+        }
+        .input-field.active{
+            left: 0;
         }
     }
 }
@@ -236,6 +346,7 @@ header{
         }
         .banner_heading{
             h1{
+                font-family: 'Helvetica';
                 font-size: 80px;
                 color: $secondary;
                 @include bp(max1910){
@@ -314,7 +425,12 @@ header{
                         padding: 10px;
                     }
                     @include bp(max479){
-                        width: 100%;
+                        width: 50%;
+                    }
+                    option{
+                        font-size: 12px;
+                        background: transparent;
+                        color: $dark;
                     }
                 }
                 .banner_bottom{
@@ -323,19 +439,14 @@ header{
                         width: 100%;
                     }
                     a{
-                        border: 3px solid $secondary;
+                        border: 2px solid $secondary;
                         text-align: center;
                         color: $secondary;
                         margin-left: 15px;
+                        transition: 0.8s ease-out;
                         &:hover {
                             background-color: $secondary;
                             color: $dark_blue;
-                        }
-                        @include bp(max1910){
-                            font-size: 18px;
-                        }
-                        @include bp(max1023){
-                            font-size: 15px;
                         }
                         @include bp(max360) {
                             display: block;
@@ -394,6 +505,7 @@ header{
                         margin-top: -10px;
                         a{
                             background-color: $secondary;
+                            font-size: 16px;
                             text-align: center;
                             color: rgb(0, 0, 0);
                             padding: 10px 20px;
@@ -448,8 +560,8 @@ header{
         justify-content: center;
         align-items: center;
         a{
-            border: 3px solid $dark_blue;
-            font-size: 18px;
+            border: 2px solid $dark_blue;
+            transition: 0.8s ease-out;
             &:hover {
                 background-color: $dark_blue;
                 color: $secondary;
@@ -524,19 +636,19 @@ header{
                         width: 100%;
                     }
                     a{
-                        font-size: 18px;
                         color: $secondary;
-                        border: 3px solid $secondary;
+                        border: 2px solid $secondary;
+                        transition: 0.8s ease-out;
                         &:hover {
                             background-color: $secondary;
                             color: $dark_blue;
                         }
                         @include bp(max575){
                             font-size: 10px;
-                            border: 2px solid $secondary;
                         }
                     }
-            }   }
+               }
+            }
         }
     }
     // right section
@@ -548,7 +660,8 @@ header{
         }
         .box_section_color{
             background: $dark_blue;
-            padding: 100px 90px 40px 90px;
+            border-radius: 5px;
+            padding: 119px 90px 40px 90px;
             @include bp(max360){
                 padding: 20px;
             }
@@ -585,11 +698,17 @@ header{
             .down_section{
                 bottom: 40px;
                 width: 100%;
+                @include bp(max479){
+                    display: block;
+                }
                 .news{
                     width: 48%;
                     font-size: 15px;
+                    @include bp(max479){
+                        width: 100%;
+                    }
                     h4{
-                        margin-bottom: 40px;
+                        margin-bottom: 20px;
                         color: $secondary;
                     }
                     p{
@@ -599,8 +718,12 @@ header{
                 .Announcement{
                     width: 48%;
                     font-size: 15px;
+                    @include bp(max479){
+                        width: 100%;
+                        margin-top: 40px;
+                    }
                     h4{
-                        margin-bottom: 40px;
+                        margin-bottom: 20px;
                         color: $secondary;
                     }
                     p{
@@ -613,6 +736,7 @@ header{
 }
 // Goal section
 .goal_section {
+    width: 100%;
     flex-wrap: nowrap;
     background-color: #F2F2F2;
     margin-top: 50px;
@@ -620,13 +744,12 @@ header{
     @include bp(max1023) {
         display: block;
     }
-
-    @include bp(max1023) {
-        .image_section img {
+    .image_section img {
+        height: 600px;
+        @include bp(max1023) {
             width: 100%;
         }
     }
-
     .contain_section {
         margin: 180px 100px;
         @include bp(max1023) {
@@ -645,7 +768,6 @@ header{
                 text-align: center;
             }
         }
-
         .discription_section {
             p {
                 margin-bottom: 60px;
@@ -659,15 +781,13 @@ header{
                 }
             }
         }
-
         .buttom_section {
             @include bp(max1023) {
                 text-align: center;
             }
-
             a {
-                border: 3px solid $dark_blue;
-
+                border: 2px solid $dark_blue;
+                transition: 0.8s ease-out;
                 &:hover {
                     background-color: $dark_blue;
                     color: $secondary;
@@ -676,8 +796,8 @@ header{
         }
     }
 }
-// Carousel Section
 
+// Carousel Section
 .owl-carousel {
     position: relative;
     margin: 130px 0 30px 0;
@@ -687,23 +807,24 @@ header{
         padding: 30px 55px;
         img {
             width: 100%;
-            height: 100px;
+            height: 40px;
+            cursor: pointer;
         }
     }
 }
 .owl-next{
     position: absolute;
-    top: 40px;
+    top: 15px;
     right: 0;
     font-size: 60px !important;
-    background: red !important;
+    background: rgb(243, 193, 193) !important;
 }
 .owl-prev{
     position: absolute;
-    top: 40px;
+    top: 15px;
     left: 0;
     font-size: 60px !important; 
-    background: red !important;
+    background: rgb(243, 193, 193) !important;
 }
 
 // Footer section
@@ -722,6 +843,11 @@ header{
     @include bp(max767) {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        padding: 80px 32px;
+    }
+    @include bp(max575) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         padding: 80px 32px;
     }
     @include bp(max479) {
@@ -744,25 +870,33 @@ header{
             text-align: center;
         }
         h3 {
+            padding-bottom: 20px;
             @include bp(max1023) {
                 font-size: 25px;
             }
             @include bp(max767) {
                 font-size: 18px;
-                margin: 10px;
+               
             }
             @include bp(max479){
                 margin-top: 25px;
+                margin: 10px;
             }
         }
         ul {
+            
             @include bp(max767){
                 margin: 10px;
             }
             li {
                 margin-bottom: 8px;
                 a {
-                    color: #ddd;
+                    color: $secondary;
+                    opacity: 0.5;
+                    margin-top: 10px;
+                    &:hover{
+                        opacity: 1;
+                    }
                     @include bp(max1023) {
                         font-size: 18px;
                     }
@@ -799,4 +933,3 @@ header{
 
 }
 
-// Menu Bar
