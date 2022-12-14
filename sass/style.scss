@@ -174,6 +174,12 @@ body{
     line-height: 1.2;
     font-size: 16px;
 }
+h1, h2, h3, h4{
+    font-family: 'Helvetica-bold-normal';
+}
+p{
+    font-family: 'Helvetica-normal';
+}
 .container {
     max-width: 1300px;
     margin: 0 auto;
@@ -204,7 +210,72 @@ header{
         .hover-logo{
             width: 20%;
         }
-        .hamburger{
+        .search{ // Search Bar Start
+            width: 16px;
+            height: 16px;
+            margin-right: 50px;
+            font-size: 12px;
+            text-align: center;
+            background-image: url('../images/search-icon.webp');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .search.active{
+            position: relative;
+            &:before{
+                position: absolute;
+                content: '';
+                width: 16px;
+                height: 16px;
+                background-color: $secondary;
+                background-image: url(../images/cross-23.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                z-index: 999999;
+                right: 0;
+
+            }
+        }
+        .input-field{
+            position: fixed;
+            left: -100%;
+            top: 55px;
+            background-color: $secondary;
+            width: 100%;
+            height: 100vh;
+            border-radius: 10px;
+            transition: 0.1s;
+            box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .input-icon{
+                font-size: 20px;
+                position: relative;
+                padding: 10px 50px;
+                border-radius: 5px;
+                // &:before{
+                //     position: absolute;
+                //     content: '';
+                //     background-image: url('../images/search-icon.webp');
+                //     background-repeat: no-repeat;
+                //     background-size: cover;
+                //     background-position: center;
+                //     width: 10px;
+                //     top: 0;
+                //     right: 0;
+                //     left: 0;
+                //     bottom: 0;
+
+                // }
+            }
+        }
+        .input-field.active{
+            left: 0;
+        } // Search Bar End
+        .hamburger{ // Hamberger Menu start
             display: none;
             @include bp(max1023){
                 display: block;
@@ -243,44 +314,7 @@ header{
                 }
             }
         }
-        .search{
-            width: 10%;
-            font-size: 12px;
-            text-align: center;
-        }
-        .fa-magnifying-glass:before, 
-        .fa-search:before {
-            content: "\f002";
-            margin-right: 33px;
-        }
-        .input-field{
-            position: fixed;
-            left: -1400px;
-            top: 55px;
-            background-color: $secondary;
-            width: 100%;
-            height: 100vh;
-            border-radius: 10px;
-            transition: 0.1s;
-            box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-            z-index: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            .input-icon{
-                font-size: 20px;
-                position: relative;
-                padding: 10px 50px;
-                border-radius: 5px;
-            }
-            img{
-                position: absolute;
-                left: 39%;
-            }
-        }
-        .input-field.active{
-            left: 0;
-        }
+        
     }
 }
 @media only screen and (max-width:1023px) {
@@ -321,7 +355,7 @@ header{
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
-}
+} // Hamberger Menu end
 
 // Banner Section
 .banner_background_image{

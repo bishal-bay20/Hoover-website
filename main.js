@@ -16,12 +16,13 @@ function closeMenu() {
 }
 // Hamburger end
 // input field start
-const search = document.querySelector('.search');
+const searchh = document.querySelector('.search');
 const input = document.querySelector('.input-field');
-search.addEventListener("click", inputField);
+searchh.addEventListener("click", inputField);
 
 function inputField() {
     input.classList.toggle("active");
+    searchh.classList.toggle("active")
 }
 // input field end
 // carousel start

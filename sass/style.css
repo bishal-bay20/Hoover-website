@@ -68,6 +68,14 @@ body {
   font-size: 16px;
 }
 
+h1, h2, h3, h4 {
+  font-family: 'Helvetica-bold-normal';
+}
+
+p {
+  font-family: 'Helvetica-normal';
+}
+
 .container {
   max-width: 1300px;
   margin: 0 auto;
@@ -113,6 +121,70 @@ header .nav-bar {
 
 header .nav-bar .hover-logo {
   width: 20%;
+}
+
+header .nav-bar .search {
+  width: 16px;
+  height: 16px;
+  margin-right: 50px;
+  font-size: 12px;
+  text-align: center;
+  background-image: url("../images/search-icon.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header .nav-bar .search.active {
+  position: relative;
+}
+
+header .nav-bar .search.active:before {
+  position: absolute;
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  background-image: url(../images/cross-23.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 999999;
+  right: 0;
+}
+
+header .nav-bar .input-field {
+  position: fixed;
+  left: -100%;
+  top: 55px;
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  border-radius: 10px;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  -webkit-box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .nav-bar .input-field .input-icon {
+  font-size: 20px;
+  position: relative;
+  padding: 10px 50px;
+  border-radius: 5px;
+}
+
+header .nav-bar .input-field.active {
+  left: 0;
 }
 
 header .nav-bar .hamburger {
@@ -161,58 +233,6 @@ header .nav-bar .nav-menu .nav-item .nav-link {
 
 header .nav-bar .nav-menu .nav-item .nav-link:hover {
   border-bottom: 1px solid #000;
-}
-
-header .nav-bar .search {
-  width: 10%;
-  font-size: 12px;
-  text-align: center;
-}
-
-header .nav-bar .fa-magnifying-glass:before,
-header .nav-bar .fa-search:before {
-  content: "\f002";
-  margin-right: 33px;
-}
-
-header .nav-bar .input-field {
-  position: fixed;
-  left: -1400px;
-  top: 55px;
-  background-color: #fff;
-  width: 100%;
-  height: 100vh;
-  border-radius: 10px;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
-  -webkit-box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-          box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-  z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-header .nav-bar .input-field .input-icon {
-  font-size: 20px;
-  position: relative;
-  padding: 10px 50px;
-  border-radius: 5px;
-}
-
-header .nav-bar .input-field img {
-  position: absolute;
-  left: 39%;
-}
-
-header .nav-bar .input-field.active {
-  left: 0;
 }
 
 @media only screen and (max-width: 1023px) {
