@@ -28,7 +28,7 @@ function inputField() {
 // carousel start
 $(document).ready(function () {
     $("#brand").owlCarousel({
-        autoPlay: 3000, //Set AutoPlay to 3 seconds
+        autoPlay: true, //Set AutoPlay to 3 seconds
         dots: true,
         loop:true,
         items: 4,
