@@ -1,13 +1,5 @@
 @font-face {
-  font-family: 'Helvetica-normal-talic';
-  src: url("../assets/fonts/Helvetica-Oblique.woff2") format("woff2"), url("../assets/fonts/Helvetica-Oblique.woff") format("woff");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Helvetica-normal';
+  font-family: 'Helvetica';
   src: url("../assets/fonts/Helvetica.woff2") format("woff2"), url("../assets/fonts/Helvetica.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -15,7 +7,7 @@
 }
 
 @font-face {
-  font-family: 'Helvetica-bold-normal';
+  font-family: 'Helvetica';
   src: url("../assets/fonts/HelveticaRounded-Bold.woff2") format("woff2"), url("../assets/fonts/HelveticaRounded-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
@@ -23,34 +15,10 @@
 }
 
 @font-face {
-  font-family: 'Helvetica-normal-compressed';
-  src: url("../assets/fonts/Helvetica-Compressed.woff2") format("woff2"), url("../assets/fonts/Helvetica-Compressed.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Helvetica-300-normal';
+  font-family: 'Helvetica';
   src: url("../assets/fonts/Helvetica-Light.woff2") format("woff2"), url("../assets/fonts/Helvetica-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Helvetica-bold-norman';
-  src: url("../assets/fonts/Helvetica-Bold.woff2") format("woff2"), url("../assets/fonts/Helvetica-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Helvetica-bold-italic';
-  src: url("../assets/fonts/Helvetica-BoldOblique.woff2") format("woff2"), url("../assets/fonts/Helvetica-BoldOblique.woff") format("woff");
-  font-weight: bold;
-  font-style: italic;
   font-display: swap;
 }
 
@@ -69,11 +37,12 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Helvetica-bold-normal';
+  font-family: 'Helvetica';
+  font-weight: bold;
 }
 
 p {
-  font-family: 'Helvetica-normal';
+  font-family: 'Helvetica';
 }
 
 .container {
@@ -83,8 +52,9 @@ p {
 }
 
 a {
+  font-family: 'Helvetica';
   text-decoration: none;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 li {
@@ -116,7 +86,7 @@ header {
 }
 
 header .nav-bar {
-  padding: 10px;
+  padding: 30px 10px;
 }
 
 header .nav-bar .hover-logo {
@@ -142,8 +112,8 @@ header .nav-bar .search.active {
 header .nav-bar .search.active:before {
   position: absolute;
   content: '';
-  width: 16px;
-  height: 16px;
+  width: 17px;
+  height: 17px;
   background-color: #fff;
   background-image: url(../images/cross-23.png);
   background-repeat: no-repeat;
@@ -176,11 +146,15 @@ header .nav-bar .input-field {
           align-items: center;
 }
 
-header .nav-bar .input-field .input-icon {
-  font-size: 20px;
+header .nav-bar .input-field input {
   position: relative;
-  padding: 10px 50px;
-  border-radius: 5px;
+  padding: 8px 40px;
+  font-size: 20px;
+}
+
+header .nav-bar .input-field img {
+  position: absolute;
+  margin-left: 288px;
 }
 
 header .nav-bar .input-field.active {
@@ -227,8 +201,8 @@ header .nav-bar .nav-menu .nav-item .nav-link {
   color: #000;
   font-size: 12px;
   padding-bottom: 5px;
-  -webkit-transition: 0.8s ease-out;
-  transition: 0.8s ease-out;
+  -webkit-transition: 3s ease-out;
+  transition: 3s ease-out;
 }
 
 header .nav-bar .nav-menu .nav-item .nav-link:hover {
@@ -339,7 +313,7 @@ header .nav-bar .nav-menu .nav-item .nav-link:hover {
 
 @media all and (max-width: 479px) {
   .banner_background_image .banner_section .banner_heading h1 {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 
@@ -365,18 +339,6 @@ header .nav-bar .nav-menu .nav-item .nav-link:hover {
 .banner_background_image .banner_section .banner_paragraph p {
   font-size: 20px;
   color: #fff;
-}
-
-@media all and (max-width: 1910px) {
-  .banner_background_image .banner_section .banner_paragraph p {
-    font-size: 25px;
-  }
-}
-
-@media all and (max-width: 1023px) {
-  .banner_background_image .banner_section .banner_paragraph p {
-    font-size: 20px;
-  }
 }
 
 @media all and (max-width: 575px) {
@@ -791,9 +753,9 @@ header .nav-bar .nav-menu .nav-item .nav-link:hover {
   padding: 119px 90px 40px 90px;
 }
 
-@media all and (max-width: 360px) {
+@media all and (max-width: 479px) {
   .box_section .box_section_right .box_section_color {
-    padding: 20px;
+    padding: 50px 40px;
   }
 }
 
@@ -808,8 +770,14 @@ header .nav-bar .nav-menu .nav-item .nav-link:hover {
 }
 
 .box_section .box_section_right .box_section_color .top_section .heading_section h2 {
-  font-size: 35px;
+  font-size: 32px;
   color: #fff;
+}
+
+@media all and (max-width: 479px) {
+  .box_section .box_section_right .box_section_color .top_section .heading_section h2 {
+    font-size: 28px;
+  }
 }
 
 @media all and (max-width: 360px) {
@@ -1001,22 +969,6 @@ header .nav-bar .nav-menu .nav-item .nav-link:hover {
   cursor: pointer;
 }
 
-.owl-next {
-  position: absolute;
-  top: 15px;
-  right: 0;
-  font-size: 60px !important;
-  background: #f3c1c1 !important;
-}
-
-.owl-prev {
-  position: absolute;
-  top: 15px;
-  left: 0;
-  font-size: 60px !important;
-  background: #f3c1c1 !important;
-}
-
 .main-footer {
   vertical-align: top;
   -ms-flex-wrap: nowrap;
@@ -1161,6 +1113,13 @@ header .nav-bar .nav-menu .nav-item .nav-link:hover {
 .main-footer .footer-menu .icon i {
   font-size: 32px;
   margin-right: 10px;
+  -webkit-transition: 0.8s ease-out;
+  transition: 0.8s ease-out;
+}
+
+.main-footer .footer-menu .icon i:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .copy-right {

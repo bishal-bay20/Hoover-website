@@ -31,7 +31,6 @@ $(document).ready(function () {
         autoPlay: 3000, //Set AutoPlay to 3 seconds
         dots: true,
         loop:true,
-        nav: true,
         items: 4,
         responsiveClass:true,
         responsive:{

@@ -1,14 +1,7 @@
 // Fontface
+
 @font-face {
-    font-family: 'Helvetica-normal-talic';
-    src: url('../assets/fonts/Helvetica-Oblique.woff2') format('woff2'),
-        url('../assets/fonts/Helvetica-Oblique.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Helvetica-normal';
+    font-family: 'Helvetica';
     src: url('../assets/fonts/Helvetica.woff2') format('woff2'),
         url('../assets/fonts/Helvetica.woff') format('woff');
     font-weight: normal;
@@ -16,7 +9,7 @@
     font-display: swap;
 }
 @font-face {
-    font-family: 'Helvetica-bold-normal';
+    font-family: 'Helvetica';
     src: url('../assets/fonts/HelveticaRounded-Bold.woff2') format('woff2'),
         url('../assets/fonts/HelveticaRounded-Bold.woff') format('woff');
     font-weight: bold;
@@ -24,35 +17,11 @@
     font-display: swap;
 }
 @font-face {
-    font-family: 'Helvetica-normal-compressed';
-    src: url('../assets/fonts/Helvetica-Compressed.woff2') format('woff2'),
-        url('../assets/fonts/Helvetica-Compressed.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Helvetica-300-normal';
+    font-family: 'Helvetica';
     src: url('../assets/fonts/Helvetica-Light.woff2') format('woff2'),
         url('../assets/fonts/Helvetica-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Helvetica-bold-norman';
-    src: url('../assets/fonts/Helvetica-Bold.woff2') format('woff2'),
-        url('../assets/fonts/Helvetica-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Helvetica-bold-italic';
-    src: url('../assets/fonts/Helvetica-BoldOblique.woff2') format('woff2'),
-        url('../assets/fonts/Helvetica-BoldOblique.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
     font-display: swap;
 }
 * {
@@ -175,10 +144,11 @@ body{
     font-size: 16px;
 }
 h1, h2, h3, h4{
-    font-family: 'Helvetica-bold-normal';
+    font-family: 'Helvetica';
+    font-weight: bold;
 }
 p{
-    font-family: 'Helvetica-normal';
+    font-family: 'Helvetica';
 }
 .container {
     max-width: 1300px;
@@ -186,8 +156,9 @@ p{
     padding: 0 20px;
 }
 a {
+    font-family: 'Helvetica';
     text-decoration: none;
-    font-size: 12px;
+    font-size: 16px;
 }
 li {
     list-style: none;
@@ -206,7 +177,7 @@ header{
     border: 1px solid $dark;
     position: relative;
     .nav-bar{
-        padding: 10px;
+        padding: 30px 10px;
         .hover-logo{
             width: 20%;
         }
@@ -226,15 +197,14 @@ header{
             &:before{
                 position: absolute;
                 content: '';
-                width: 16px;
-                height: 16px;
+                width: 17px;
+                height: 17px;
                 background-color: $secondary;
                 background-image: url(../images/cross-23.png);
                 background-repeat: no-repeat;
                 background-position: center;
                 z-index: 999999;
                 right: 0;
-
             }
         }
         .input-field{
@@ -251,25 +221,14 @@ header{
             display: flex;
             justify-content: center;
             align-items: center;
-            .input-icon{
-                font-size: 20px;
+            input{
                 position: relative;
-                padding: 10px 50px;
-                border-radius: 5px;
-                // &:before{
-                //     position: absolute;
-                //     content: '';
-                //     background-image: url('../images/search-icon.webp');
-                //     background-repeat: no-repeat;
-                //     background-size: cover;
-                //     background-position: center;
-                //     width: 10px;
-                //     top: 0;
-                //     right: 0;
-                //     left: 0;
-                //     bottom: 0;
-
-                // }
+                padding: 8px 40px;
+                font-size: 20px;
+            }
+            img{
+                position: absolute;
+                margin-left: 288px; 
             }
         }
         .input-field.active{
@@ -306,7 +265,7 @@ header{
                     color: #000;
                     font-size: 12px;
                     padding-bottom: 5px;
-                    transition: 0.8s ease-out;
+                    transition: 3s ease-out;
                     &:hover{
                         border-bottom: 1px solid $dark;
                         
@@ -393,7 +352,7 @@ header{
                     font-size: 50px;
                 }
                 @include bp(max479){
-                    font-size: 40px;
+                    font-size: 36px;
                 }
                
             }
@@ -412,12 +371,6 @@ header{
             p{
                 font-size: 20px;
                 color: $secondary;
-                @include bp(max1910){
-                    font-size: 25px;
-                }
-                @include bp(max1023){
-                    font-size: 20px;
-                }
                 @include bp(max575){
                     font-size: 18px;
                 }
@@ -696,8 +649,8 @@ header{
             background: $dark_blue;
             border-radius: 5px;
             padding: 119px 90px 40px 90px;
-            @include bp(max360){
-                padding: 20px;
+            @include bp(max479){
+                padding: 50px 40px;
             }
             .top_section{
                 .heading_section{
@@ -706,8 +659,11 @@ header{
                         margin-bottom: 30px;
                     }
                     h2{
-                        font-size: 35px;
+                        font-size: 32px;
                         color: $secondary;
+                        @include bp(max479){
+                            font-size: 28px;
+                        }
                         @include bp(max360){
                             font-size: 20px;
                         }
@@ -846,20 +802,6 @@ header{
         }
     }
 }
-.owl-next{
-    position: absolute;
-    top: 15px;
-    right: 0;
-    font-size: 60px !important;
-    background: rgb(243, 193, 193) !important;
-}
-.owl-prev{
-    position: absolute;
-    top: 15px;
-    left: 0;
-    font-size: 60px !important; 
-    background: rgb(243, 193, 193) !important;
-}
 
 // Footer section
 .main-footer {
@@ -945,6 +887,10 @@ header{
             i {
                 font-size: 32px;
                 margin-right: 10px;
+                transition: 0.8s ease-out;
+                &:hover{
+                    transform: scale(1.2);
+                }
             }
         }
     }
