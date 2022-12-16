@@ -315,7 +315,7 @@ header{
         transform: translateY(-8px) rotate(-45deg);
     }
 } // Hamberger Menu end
-
+/*** Home Page CSS Start **/
 // Banner Section
 .banner_background_image{
     background-image: url('../images/background.png');
@@ -911,6 +911,156 @@ header{
             margin: 10px;
         }
     }
+}
+/*** Home Page CSS End **/
+/*** Sustainable Packaging Page CSS Start **/
+//Sustainable
+.sustainable-banner-image{
+    background-image: url('../images/banner-sustainable-packaging-dark.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    .sustainable-banner-contant{
+        padding: 100px 90px;
+        .sustainable-banner-top{
+            margin-bottom: 50px;
+            .packaging-banner-headding{
+                h1{
+                    color: $secondary;
+                    width: 30%;
+                    font-size: 38px;
+                }
+            }
+            .packaging-banner-image{
+                img{
+                    width: 60%;
+                    height: auto;
+                }
+            }
+        }
+        .sustainable-section-down{
+            p{
+                color: $secondary;
+                font-size: 18px;
+            }
+        }
+    }
+}
+// kevin-section
+.kevin-section{
+    padding: 100px 0;
+    .ceo-section{
+        p{
+            color: $dark_blue;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+    .kevin-headding{
+        color: $dark_blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+        hr{
+            width: 60px;
+            height: 3px;
+            background-color: $dark;
+        }
+        h3{
+            font-size: 38px;
+            margin: 0 10px
+        }
+    }
+    .kevin-paragraph{
+        p{
+            color: $dark_blue;
+            width: 35%;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+}
+// Transformation 
+.transformation-box-section{
+    @include bp(max767){
+        display: block;
+    }
+    margin-bottom: 50px;
+    .box-1 {
+        border: 2px solid $dark_blue;
+        border-radius: 5px;
+    }
+    .transformation-box{
+        width: calc((100% - 20px) /2);
+        @include bp(max767){
+            width: 100%;
+            margin-top: 20px;
+        }
+        .transformation-headding{
+            h3{
+               color: $dark_blue;
+               font-size: 30px; 
+               margin-bottom: 30px;
+            }
+        }
+        .transformation-paragraph{
+            p{
+                width: 80%;
+                color: $dark_blue;
+                font-size: 15px;
+                margin-bottom: 30px;
+                @include bp(max1023){
+                    width: 90%;
+                    margin-bottom: 75px;
+                }
+            }
+        }
+        .transformation-button{
+            a{
+                border: 2px solid $dark_blue;
+                color: $dark_blue;
+            }
 
+        }
+        .case-study-box{
+            width: calc((100% - 20px) /2);
+            img{
+                width: 100%;
+                height: auto;
+            }
+            .case-headding{
+                h3{
+                    margin-top: 20px;
+                    color: $secondary;
+                    padding: 0 10px;
+                }
+            }
+            .case-paragraph{
+                p{
+                    color: $secondary;
+                    margin-top: 20px;
+                    padding: 0 10px;
+                    font-size: 14px;
+                }
+            }
+            .case-button{
+                padding: 30px 10px;
+                a{
+                    border: 2px solid $secondary;
+                    color: $secondary;
+                }
+            }
+        }
+    }
+    .box-bg-one{
+        background-color: $dark_blue;
+        border-radius: 5px;
+    }
+    .box-bg-two{
+        background-color: #4DB359;
+        border-radius: 5px;
+    }
 }
 

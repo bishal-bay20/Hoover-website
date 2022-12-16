@@ -251,6 +251,7 @@ header .nav-bar .nav-menu .nav-item .nav-link:hover {
   }
 }
 
+/*** Home Page CSS Start **/
 .banner_background_image {
   background-image: url("../images/background.png");
   background-repeat: no-repeat;
@@ -1143,5 +1144,173 @@ header .nav-bar .nav-menu .nav-item .nav-link:hover {
     font-size: 10px;
     margin: 10px;
   }
+}
+
+/*** Home Page CSS End **/
+/*** Sustainable Packaging Page CSS Start **/
+.sustainable-banner-image {
+  background-image: url("../images/banner-sustainable-packaging-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+}
+
+.sustainable-banner-image .sustainable-banner-contant {
+  padding: 100px 90px;
+}
+
+.sustainable-banner-image .sustainable-banner-contant .sustainable-banner-top {
+  margin-bottom: 50px;
+}
+
+.sustainable-banner-image .sustainable-banner-contant .sustainable-banner-top .packaging-banner-headding h1 {
+  color: #fff;
+  width: 30%;
+  font-size: 38px;
+}
+
+.sustainable-banner-image .sustainable-banner-contant .sustainable-banner-top .packaging-banner-image img {
+  width: 60%;
+  height: auto;
+}
+
+.sustainable-banner-image .sustainable-banner-contant .sustainable-section-down p {
+  color: #fff;
+  font-size: 18px;
+}
+
+.kevin-section {
+  padding: 100px 0;
+}
+
+.kevin-section .ceo-section p {
+  color: #13216A;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.kevin-section .kevin-headding {
+  color: #13216A;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+}
+
+.kevin-section .kevin-headding hr {
+  width: 60px;
+  height: 3px;
+  background-color: #000;
+}
+
+.kevin-section .kevin-headding h3 {
+  font-size: 38px;
+  margin: 0 10px;
+}
+
+.kevin-section .kevin-paragraph p {
+  color: #13216A;
+  width: 35%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.transformation-box-section {
+  margin-bottom: 50px;
+}
+
+@media all and (max-width: 767px) {
+  .transformation-box-section {
+    display: block;
+  }
+}
+
+.transformation-box-section .box-1 {
+  border: 2px solid #13216A;
+  border-radius: 5px;
+}
+
+.transformation-box-section .transformation-box {
+  width: calc((100% - 20px) /2);
+}
+
+@media all and (max-width: 767px) {
+  .transformation-box-section .transformation-box {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.transformation-box-section .transformation-box .transformation-headding h3 {
+  color: #13216A;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.transformation-box-section .transformation-box .transformation-paragraph p {
+  width: 80%;
+  color: #13216A;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+@media all and (max-width: 1023px) {
+  .transformation-box-section .transformation-box .transformation-paragraph p {
+    width: 90%;
+    margin-bottom: 75px;
+  }
+}
+
+.transformation-box-section .transformation-box .transformation-button a {
+  border: 2px solid #13216A;
+  color: #13216A;
+}
+
+.transformation-box-section .transformation-box .case-study-box {
+  width: calc((100% - 20px) /2);
+}
+
+.transformation-box-section .transformation-box .case-study-box img {
+  width: 100%;
+  height: auto;
+}
+
+.transformation-box-section .transformation-box .case-study-box .case-headding h3 {
+  margin-top: 20px;
+  color: #fff;
+  padding: 0 10px;
+}
+
+.transformation-box-section .transformation-box .case-study-box .case-paragraph p {
+  color: #fff;
+  margin-top: 20px;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.transformation-box-section .transformation-box .case-study-box .case-button {
+  padding: 30px 10px;
+}
+
+.transformation-box-section .transformation-box .case-study-box .case-button a {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.transformation-box-section .box-bg-one {
+  background-color: #13216A;
+  border-radius: 5px;
+}
+
+.transformation-box-section .box-bg-two {
+  background-color: #4DB359;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=style.css.map */
