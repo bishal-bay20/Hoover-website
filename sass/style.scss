@@ -182,8 +182,8 @@ header{
             width: 20%;
         }
         .search{ // Search Bar Start
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             margin-right: 50px;
             font-size: 12px;
             text-align: center;
@@ -197,8 +197,8 @@ header{
             &:before{
                 position: absolute;
                 content: '';
-                width: 17px;
-                height: 17px;
+                width: 18px;
+                height: 18px;
                 background-color: $secondary;
                 background-image: url(../images/cross-23.png);
                 background-repeat: no-repeat;
@@ -210,7 +210,7 @@ header{
         .input-field{
             position: fixed;
             left: -100%;
-            top: 55px;
+            top: 95px;
             background-color: $secondary;
             width: 100%;
             height: 100vh;
@@ -225,10 +225,17 @@ header{
                 position: relative;
                 padding: 8px 40px;
                 font-size: 20px;
+                @include bp(max360){
+                    padding: 8px 30px;
+                    font-size: 16px;
+                }
             }
             img{
                 position: absolute;
                 margin-left: 288px; 
+                @include bp(max360){
+                    margin-left: 228px; 
+                }
             }
         }
         .input-field.active{
@@ -268,7 +275,6 @@ header{
                     transition: 3s ease-out;
                     &:hover{
                         border-bottom: 1px solid $dark;
-                        
                     }
                 }
             }
@@ -279,8 +285,8 @@ header{
 @media only screen and (max-width:1023px) {
     .nav-menu{
         position: fixed;
-        left: -1050px;
-        top: 55px;
+        left: -100%;
+        top: 95px;
         flex-direction: column;
         background-color: $secondary;
         width: 100%;
@@ -801,7 +807,27 @@ header{
             cursor: pointer;
         }
     }
-    
+    .owl-dots{
+        display: flex;
+        justify-content: space-between;
+        max-width: 4%;
+        margin: 20px auto;
+        .owl-dot{
+            border: 5px solid rgb(185, 164, 164) !important;
+            background-color: rgb(204, 179, 179);
+            border-radius: 50%;
+            padding: 5px;
+            &.active{
+                background-color: rgb(49, 5, 5);
+                span{
+                    color: rgb(49, 5, 5) !important;
+                }
+            }
+            span{
+                color: rgb(204, 179, 179);
+            }
+        }
+    }
 }
 // Footer section
 .main-footer {
@@ -809,7 +835,7 @@ header{
     flex-wrap: nowrap;
     background-color: #13216A;
     color: $secondary;
-    padding: 160px 0 160px 0;
+    padding: 100px 0;
     align-items: inherit;
     @include bp(max1023) {
         display: grid;
@@ -922,20 +948,49 @@ header{
     background-position: center center;
     width: 100%;
     .sustainable-banner-contant{
-        padding: 100px 90px;
+        padding: 100px 50px;
+        @include bp(max575){
+            padding: 75px 25px;
+        }
         .sustainable-banner-top{
             margin-bottom: 50px;
+            @include bp(max767){
+                display: block;
+            }
             .packaging-banner-headding{
+                width: 40%;
+                @include bp(max767){
+                    width: 100%;
+                }
                 h1{
                     color: $secondary;
-                    width: 30%;
                     font-size: 38px;
+                    @include bp(max767){
+                        text-align: center;
+                        margin-bottom: 50px;
+                        font-size: 50px;
+                    }
+                    @include bp(max360){
+                        font-size: 38px;
+                    }
                 }
             }
             .packaging-banner-image{
+                display: flex;
+                justify-content: end;
+                width: 60%;
+                @include bp(max767){
+                    width: 100%;
+                    justify-content: center;
+                }
                 img{
                     width: 60%;
-                    height: auto;
+                    @include bp(max767){
+                        width: 80%;
+                    }
+                    @include bp(max479){
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -943,6 +998,10 @@ header{
             p{
                 color: $secondary;
                 font-size: 18px;
+                @include bp(max767){
+                    text-align: center;
+                }
+
             }
         }
     }
@@ -966,35 +1025,54 @@ header{
         hr{
             width: 60px;
             height: 3px;
-            background-color: $dark;
+            background-color: $dark_blue;
+            @include bp(max479){
+                width: 40px;
+            }
         }
         h3{
             font-size: 38px;
-            margin: 0 10px
+            margin: 0 10px;
+            @include bp(max479){
+                font-size: 25px;
+            }
         }
     }
     .kevin-paragraph{
         p{
             color: $dark_blue;
-            width: 35%;
+            width: 40%;
             margin: 0 auto;
             text-align: center;
+            @include bp(max767){
+                width: 60%;
+            }
+            @include bp(max479){
+                width: 80%;
+            }
         }
     }
 }
 // Transformation 
 .transformation-box-section{
-    @include bp(max767){
+    @include bp(max1023){
         display: block;
     }
     margin-bottom: 50px;
     .box-1 {
+        padding: 100px 50px 25px;
         border: 2px solid $dark_blue;
         border-radius: 5px;
+        @include bp(max479){
+            padding: 50px 25px 25px;
+        }
     }
     .transformation-box{
         width: calc((100% - 20px) /2);
-        @include bp(max767){
+        @include bp(max479){
+            display: block;
+        }
+        @include bp(max1023){
             width: 100%;
             margin-top: 20px;
         }
@@ -1010,10 +1088,13 @@ header{
                 width: 80%;
                 color: $dark_blue;
                 font-size: 15px;
-                margin-bottom: 30px;
+                margin-bottom: 115px;
                 @include bp(max1023){
                     width: 90%;
-                    margin-bottom: 75px;
+                }
+                @include bp(max360){
+                    margin-bottom: 50px;
+                    width: 100%;
                 }
             }
         }
@@ -1021,11 +1102,22 @@ header{
             a{
                 border: 2px solid $dark_blue;
                 color: $dark_blue;
+                transition: 0.8s ease-out;
+                &:hover{
+                    background-color: $dark_blue;
+                    color: $secondary;
+                }
+                @include bp(max479){
+                    font-size: 13px;
+                }
             }
-
         }
         .case-study-box{
             width: calc((100% - 20px) /2);
+            @include bp(max479){
+                width: 100%;
+                margin-top: 20px;
+            }
             img{
                 width: 100%;
                 height: auto;
@@ -1046,21 +1138,197 @@ header{
                 }
             }
             .case-button{
-                padding: 30px 10px;
+                padding: 37px 10px;
                 a{
                     border: 2px solid $secondary;
                     color: $secondary;
+                    transition: 0.8s ease-out;
+                    &:hover{
+                        background-color: $secondary;
+                        color: $dark_blue;
+                    }
                 }
             }
         }
     }
     .box-bg-one{
         background-color: $dark_blue;
-        border-radius: 5px;
+        border-radius: 10px;
     }
     .box-bg-two{
         background-color: #4DB359;
-        border-radius: 5px;
+        border-radius: 10px;
     }
 }
-
+// create-circularity-section
+.create-circularity-section{
+    margin-bottom: 50px;
+    @include bp(max1023){
+        display: block;
+    }
+    .craete-box{
+        padding: 100px 50px 124px;
+        background-color: #f7e8e8;
+        @include bp(max1279){
+            padding-bottom: 65px;
+        }
+        @include bp(max767){
+            padding: 100px 20px;
+        }
+        @include bp(max767){
+            padding: 50px 20px;
+        }
+    }
+    .create-circularity-box{
+        width: calc((100% - 20px) /2);
+        @include bp(max1023){
+            width: 100%;
+            margin-top: 20px;
+        }
+        .create-circularity-headding{
+            h3{
+                color: $dark_blue;
+                font-size: 38px;
+                margin-bottom: 50px;
+                @include bp(max575){
+                    font-size: 25px;
+                }
+            }
+        }
+        .create-circularity-paragraph{
+            p{
+                color: $dark_blue;
+                font-size: 18px;
+                @include bp(max360){
+                    font-size: 15px;
+                }
+            }
+        }
+        img{
+            width: 100%;
+        }
+    }
+}
+// Learning Section
+.learning-section{
+    margin-bottom: 50px;
+    @include bp(max767){
+        display: block;
+    }
+    .line-section{
+        width: calc((100% - 100px) /3);
+        @include bp(max767){
+            width: 100%;
+        }
+        hr{
+            height: 3px;
+            background: $dark_blue;
+            margin: 20px 0;
+        }
+        .learning-box{
+            .learning-icons-one{
+                background-image: url('../images/icon-rentals.svg');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 40px;
+                height: 40px;
+            }
+            .learning-icons-two{
+                background-image: url('../images/icon-fleet.svg');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 40px;
+                height: 40px;
+            }
+            .learning-icons-three{
+                background-image: url('../images/icon-services.svg');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 40px;
+                height: 40px;
+            }
+            .learning-arrow-icon{
+                background-image: url('../images/icon-arrow-right.svg');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 40px;
+                height: 41px;
+            }
+            .learning-title{
+                h3{
+                    color: $dark_blue;
+                    font-size: 17px;
+                    &:hover{
+                        opacity: 0.5;
+                    }
+                    @include bp(max767){
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+// Help Section
+.help-section{
+    background-color: #f7e8e8;
+    padding: 50px 20px;
+    margin-bottom: 50px;
+    @include bp(max767){
+        display: block;
+    }
+    .headphone-image{
+        background-image: url('../images/icon-headset.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100px;
+        height: 100px;
+        @include bp(max767){
+            margin: 20px auto;
+        }
+    }
+    .help-contant{
+        width: 45%;
+        @include bp(max767){
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .help-headding{
+            h3{
+                font-size: 35px;
+                color: $dark_blue;
+                margin-bottom: 20px;
+                @include bp(max1023){
+                    font-size: 25px;
+                }
+            }
+        }
+        .help-paragraph{
+            p{
+                color: $dark_blue;
+            }
+        }
+    }
+    .help-button{
+        @include bp(max767){
+            text-align: center;
+            margin-top: 50px;
+        }
+        a{
+            border: 2px solid $dark_blue;
+            color: $dark_blue;
+            transition: 0.8s ease-out;
+            &:hover{
+                background-color: $dark_blue;
+                color: $secondary;
+            }
+        }
+    }
+}
+/*** Sustainable Packaging Page CSS End **/
